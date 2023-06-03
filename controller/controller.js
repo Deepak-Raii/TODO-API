@@ -124,7 +124,7 @@ const readTODO = app.get("/readTODO",async(req,res)=>{
         }
         else
         {
-            const wholedata = await user_model.find({});
+            const wholedata = await user_model.find().skip(0).limit(5);
             res.send(wholedata);
         }
     });
